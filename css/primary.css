@@ -1,0 +1,350 @@
+/* Подключение шрифта из папки */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/raleway/raleway-v18-latin-700.eot');
+  src: local(''),
+    url('../fonts/raleway/raleway-v18-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/raleway/raleway-v18-latin-700.woff2') format('woff2'),
+    url('../fonts/raleway/raleway-v18-latin-700.woff') format('woff'),
+    url('../fonts/raleway/raleway-v18-latin-700.ttf') format('truetype'),
+    url('../fonts/raleway/raleway-v18-latin-700.svg#Raleway') format('svg');
+}
+
+/* Делаем картинки блочными */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Палитра цветов */
+:root {
+  --main-color: #757575;
+  --heading-color: #212121;
+  --active-color: #2196f3;
+  --secondary-color: #ffffff;
+  --footer-color: rgba(255, 255, 255, 0.6);
+  --background: #2f303a;
+  --hero-background: #c4c4c4;
+  --light-background: #f5f4fa;
+  --line-header: #ececec;
+  --light-line: #eeeeee;
+  --img-overlay: rgba(47, 48, 58, 0.4);
+  --img-overlay-2: rgba(47, 48, 58, 0.8);
+  --sosial-icon: #afb1b8;
+  --join-sircle: rgba(255, 255, 255, 0.1);
+  --overlay-bkg: rgba(33, 150, 243, 0.9);
+  --bkg-drop: rgba(0, 0, 0, 0.2);
+}
+
+/* Типография */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  margin: 0;
+  padding: 0;
+}
+
+.invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+/* Убрать подчёркивания у ссылок */
+.link {
+  text-decoration: none;
+}
+
+/* Убрать маркировку списков */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Задаём ширину остовного контейнера */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Стиль хэдера */
+.header {
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.headnav .li-item + .li-item {
+  margin-left: 50px;
+}
+
+.headnav {
+  margin-left: 93px;
+}
+
+.contacts .li-item + .li-item {
+  margin-left: 50px;
+}
+
+.contacts {
+  margin-left: auto;
+}
+
+.head-line {
+  border-bottom: 1px solid var(--line-header);
+}
+
+/* Основные стили */
+body {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+/* Логотип шапки*/
+.logo-head {
+  color: var(--heading-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.logo-blue {
+  color: var(--active-color);
+}
+
+/* Логотип футера */
+.logo-foot {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+/* Стили для шапки */
+.headnav .link {
+  color: var(--heading-color);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.headnav .link:hover,
+.headnav .link:focus {
+  color: var(--active-color);
+}
+
+.contacts .link {
+  color: var(--main-color);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts .link:hover,
+.contacts .link:focus {
+  color: var(--active-color);
+}
+
+.headnav .current {
+  color: var(--active-color);
+}
+
+.headnav .li-item {
+  position: relative;
+}
+
+.headnav .current::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: var(--active-color);
+  border-radius: 2px;
+
+  position: absolute;
+  left: 0;
+  bottom: -28.5px;
+}
+
+.contacts-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  margin-right: 10px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts .link:hover .contacts-icon,
+.contacts .link:focus .contacts-icon {
+  fill: var(--active-color);
+}
+
+/* Стили для подвала */
+.footer-box {
+  background-color: var(--background);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.address {
+  color: var(--secondary-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info {
+  color: var(--footer-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Стили для адреса в футере */
+.foot-list {
+  display: inline-block;
+  font-style: normal;
+  width: 231px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+.footer-box .li-item + .li-item {
+  margin-top: 9px;
+}
+
+.address:hover,
+.address:focus,
+.info:hover,
+.info:focus {
+  color: var(--active-color);
+}
+
+.join-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
+
+.footer-wrap {
+  display: flex;
+}
+
+.join {
+  margin-left: 70px;
+  margin-right: auto;
+}
+
+.join-list {
+  display: flex;
+}
+
+.join-icons {
+  width: 20px;
+  height: 20px;
+  fill: var(--secondary-color);
+}
+
+.join-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--join-sircle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Модальное окно */
+.close-button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border: hidden;
+}
+
+.backdrop.is-hidden {
+  /* visibility: hidden; */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.1);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bkg-drop);
+
+  /* visibility: visible; */
+  opacity: 1;
+  z-index: 99;
+  transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
