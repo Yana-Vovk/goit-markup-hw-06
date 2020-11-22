@@ -425,7 +425,7 @@ body {
   background-color: var(--active-color);
   border-color: var(--active-color);
   background-origin: border-box;
-  background-image: url(/images/svg-icons/icon-check.svg);
+  background-image: url(../images/svg-icons/icon-check.svg);
   background-size: contain;
 }
 
