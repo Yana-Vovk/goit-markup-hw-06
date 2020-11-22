@@ -430,8 +430,8 @@ body {
 }
 
 /* При выделении чек бокса табом - не подсвечивает рамкой */
-.act-lbl:focus .chk-icon {
-  outline: 2px solid black;
+.chk-box:focus + .chk-icon {
+  outline: 3px solid black;
 }
 
 .fill-in .button.modal-btn {
