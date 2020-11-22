@@ -485,6 +485,10 @@ body {
   border-color: var(--active-color);
 }
 
+.hyperlink {
+  margin-left: 5px;
+}
+
 /* Стилицация инпута в футере */
 .subbmit-input {
   width: 358px;
