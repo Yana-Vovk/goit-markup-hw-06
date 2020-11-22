@@ -443,9 +443,13 @@
             </div>
             <div class="subbmit">
                 <p class="subbmit-title">Подпишитесь на рассылку</p>
-                <form>
-                    <input type="email" placeholder="E-mail">
-                    <button class="button" type="submit">Подписаться</button>
+                <form class="subbmit-wrap">
+                    <input class="subbmit-input" type="email" placeholder="E-mail">
+                    <button class="button foot-btn" type="submit">Подписаться
+                        <svg class="send-btn">
+                            <use href=./images/svg-icons/sprite.svg#send-icon></use>
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
@@ -463,21 +467,50 @@
             </button>
             <p class="modal-heading">Оставьте свои данные, мы вам перезвоним</p>
             <form class="fill-in">
-                <label class="lable-txt" for="user-name">Имя</label>
-                <input id="user-name" type="text" name="user-name">
-                <label class="lable-txt" for="phone">Телефон</label>
-                <input id="phone" type="tel" name="phone">
-                <label class="lable-txt" for="email">Почта</label>
-                <input id="email" type="email" name="email">
-                <label class="lable-txt" for="comment">Комментарий</label>
-                <textarea class="txtarea lable-txt" name="comment" id="comment" cols="30" rows="10"
-                    placeholder="Введите текст"></textarea>
-                <div class="acception">
-                    <input id="acception" type="checkbox">
-                    <label for="acception">Соглашаюсь с рассылкой и принимаю</label>
-                    <a href="">Условия договора</a>
+                <div>
+                    <label class="lable-txt" for="user-name">Имя</label>
+                    <div class="input-position">
+                        <input class="input-box" id="user-name" type="text" name="user-name" placeholder=" ">
+                        <svg class="field">
+                            <use href="./images/svg-icons/sprite.svg#person-black">
+                            </use>
+                        </svg>
+                    </div>
                 </div>
-                <button class="button" type="submit">Отправить</button>
+                <div>
+                    <label class="lable-txt" for="phone">Телефон</label>
+                    <div class="input-position">
+                        <input class="input-box" id="phone" type="tel" name="phone">
+                        <svg class="field">
+                            <use href="./images/svg-icons/sprite.svg#phone-black">
+                            </use>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <label class="lable-txt" for="email">Почта</label>
+                    <div class="input-position">
+                        <input class="input-box" id="email" type="email" name="email">
+                        <svg class="field">
+                            <use href="./images/svg-icons/sprite.svg#email-black">
+                            </use>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <label class="lable-txt" for="comment">Комментарий</label>
+                    <textarea class="txtarea" name="comment" id="comment" cols="60" rows="6"
+                        placeholder="Введите текст"></textarea>
+                </div>
+                <div class="acception">
+                    <label class="act-lbl" for="acception">
+                        <input class="chk-box" id="acception" type="checkbox">
+                        <span class="chk-icon"></span>
+                        Соглашаюсь с рассылкой и принимаю
+                        <a href="">Условия договора</a>
+                    </label>
+                </div>
+                <button class="button modal-btn" type="submit">Отправить</button>
             </form>
         </div>
     </div>

@@ -260,16 +260,12 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--secondary-color);
+  margin-bottom: 20px;
 }
 
 .footer-wrap {
   display: flex;
-}
-
-.join,
-.subbmit {
-  margin-left: 70px;
-  margin-right: auto;
+  justify-content: space-between;
 }
 
 .join-list {
@@ -296,17 +292,15 @@ body {
 
 /* Модальное окно */
 .close-button {
-  display: block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 30px;
   height: 30px;
-  padding: 0;
-  margin-top: 8px;
-  margin-right: 8px;
-  margin-left: auto;
-  justify-content: center;
-  align-items: center;
+
   background-color: var(--secondary-color);
-  border: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 .backdrop.is-hidden {
@@ -332,9 +326,10 @@ body {
 }
 
 .modal {
-  position: absolute;
+  position: relative;
   width: 528px;
   height: 581px;
+  padding: 40px;
   top: 50%;
   left: 50%;
   background-color: var(--secondary-color);
@@ -347,28 +342,15 @@ body {
 }
 
 .close-x {
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   fill: var(--black);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.close-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
 }
 
 .fill-in {
   display: inline-flex;
   flex-direction: column;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
 }
 
 .txtarea {
@@ -376,6 +358,23 @@ body {
   height: 120px;
   resize: none;
   padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.txtarea::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--plcholder);
+}
+
+.txtarea:focus {
+  border-color: var(--active-color);
 }
 
 .modal-heading {
@@ -387,20 +386,145 @@ body {
   color: var(--heading-color);
 
   margin-top: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
 }
 
 .acception {
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.fill-in .button {
+.chk-box {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+.chk-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 2px solid var(--heading-color);
+  border-radius: 2px;
+  background-color: transparent;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.act-lbl {
+  display: flex;
+  align-items: center;
+}
+
+.chk-box:checked + .chk-icon {
+  background-color: var(--active-color);
+  border-color: var(--active-color);
+  background-origin: border-box;
+  background-image: url(/images/svg-icons/icon-check.svg);
+  background-size: contain;
+}
+
+/* При выделении чек бокса табом - не подсвечивает рамкой */
+.act-lbl:focus .chk-icon {
+  outline: 2px solid black;
+}
+
+.fill-in .button.modal-btn {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 56px;
+  padding-right: 56px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .lable-txt {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
+
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+.input-position {
+  position: relative;
+}
+
+.input-box {
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  outline: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  fill: var(--heading-color);
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-box:focus + .field {
+  fill: var(--active-color);
+}
+
+.input-box:focus {
+  border-color: var(--active-color);
+}
+
+/* Стилицация инпута в футере */
+.subbmit-input {
+  width: 358px;
+  height: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+
+  margin-right: 12px;
+  padding-left: 16px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  align-items: center;
+  color: var(--footer-color);
+}
+
+.subbmit .button.foot-btn {
+  position: relative;
+
+  margin-top: 0px;
+  padding-right: 63px;
+  background-color: var(--join-sircle);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button.foot-btn:hover,
+.button.foot-btn:focus {
+  background-color: var(--active-color);
+}
+
+.send-btn {
+  position: absolute;
+  top: 50%;
+  right: 29px;
+  transform: translateY(-50%);
+
+  fill: var(--secondary-color);
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
 }
